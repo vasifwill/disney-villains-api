@@ -1,4 +1,3 @@
-const villains = require('../villains')
 const models = require('../models')
 
 const getAllVillains = async (request, response) => {
@@ -10,8 +9,11 @@ const getAllVillains = async (request, response) => {
 
 
 
-const findTitle = (request, response) => {
-  const foundTitle = villains.find((villa) => villa.slug.toLowerCase().includes(request.params.slug.toLowerCase()))
+const findTitle = async (request, response) => {
+  const { slug } = request.params
+  const foundTitle = await models.villains.findOne({
+    where: { slug }
+  })
 
   return response.send(foundTitle)
 }

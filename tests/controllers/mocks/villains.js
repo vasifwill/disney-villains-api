@@ -1,4 +1,4 @@
-const villains = [{
+const villainsList = [{
   name: 'Captain Hook',
   movie: 'Peter Pan',
   slug: 'captain-hook',
@@ -72,4 +72,13 @@ const villains = [{
   slug: 'ursula',
 }]
 
-module.exports = villains
+const singleVillain = {
+  name: 'Red Carpet',
+  movie: 'Captain America: The First Avenger',
+  slug: 'red-skull',
+  createdAt: '2020-09-22T01:05:37.000Z',
+  updatedAt: '2020-09-22T01:05:37.000Z',
+  deletedAt: null
+}
+
+module.exports = {villainsList, singleVillain }
